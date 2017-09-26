@@ -1,4 +1,5 @@
 ﻿using BloodManagmentSystem.Core;
+using BloodManagmentSystem.Core.ViewModels;
 using System.Web.Mvc;
 
 namespace BloodManagmentSystem.Controllers
@@ -14,7 +15,12 @@ namespace BloodManagmentSystem.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var requestModel = new BloodRequestFormViewModel
+            {
+                Banks = _unitOfWork.BloodBanks.GetBloodBanks()
+            };
+
+            return View(requestModel);
         }
     }
 }
