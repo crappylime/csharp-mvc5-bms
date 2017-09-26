@@ -1,9 +1,8 @@
-namespace BloodManagmentSystem.Migrations
+using System.Data.Entity.Migrations;
+
+namespace BloodManagmentSystem.Persistance.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
-    public partial class AddUserToDB : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {

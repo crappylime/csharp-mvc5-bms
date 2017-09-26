@@ -1,7 +1,7 @@
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace BloodManagmentSystem.Models
+namespace BloodManagmentSystem.Core.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

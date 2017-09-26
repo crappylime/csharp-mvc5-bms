@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace BloodManagmentSystem
+namespace Bootstrapper
 {
     public class FilterConfig
     {

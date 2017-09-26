@@ -1,26 +1,20 @@
-﻿using System.Web.Mvc;
-using BloodManagmentSystem.Services;
+﻿using BloodManagmentSystem.Core;
+using System.Web.Mvc;
 
 namespace BloodManagmentSystem.Controllers
 {
     public class BloodRequestController : Controller
     {
-        private readonly IBloodService _service;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public BloodRequestController(IBloodService service)
+        public BloodRequestController(IUnitOfWork unitOfWork)
         {
-            _service = service;
+            _unitOfWork = unitOfWork;
         }
 
-        // GET: BloodRequest
         public ActionResult Create()
         {
-            return View(_service.Get());
+            return View();
         }
-
-//        public ActionResult Create()
-//        {
-//            return View(_service.Get());
-//        }
     }
 }

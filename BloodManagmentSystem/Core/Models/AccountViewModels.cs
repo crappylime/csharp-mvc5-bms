@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BloodManagmentSystem.Models
+namespace BloodManagmentSystem.Core.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -1,18 +1,17 @@
-namespace BloodManagmentSystem.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using BloodManagmentSystem.Core.Models;
+using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BloodManagmentSystem.Models.ApplicationDbContext>
+namespace BloodManagmentSystem.Persistance.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"Persistance\Migrations";
         }
 
-        protected override void Seed(BloodManagmentSystem.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

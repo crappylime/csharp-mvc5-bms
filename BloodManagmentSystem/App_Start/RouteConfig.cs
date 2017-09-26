@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BloodManagmentSystem
+namespace Bootstrapper
 {
     public class RouteConfig
     {
