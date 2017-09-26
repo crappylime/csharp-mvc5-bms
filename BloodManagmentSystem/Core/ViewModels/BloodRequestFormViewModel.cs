@@ -1,6 +1,7 @@
 ﻿using BloodManagmentSystem.Core.Models;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BloodManagmentSystem.Core.ViewModels
@@ -14,6 +15,7 @@ namespace BloodManagmentSystem.Core.ViewModels
         [Required]
         public string Date { get; set; }
 
+        [IsTimeValid]
         public string Time { get; set; }
 
         [Required]
@@ -22,8 +24,15 @@ namespace BloodManagmentSystem.Core.ViewModels
         public string City { get; set; }
         public IEnumerable Banks { get; set; }
 
+        public BloodRequestFormViewModel()
+        {
+            Banks = new List<BloodBank>();
+        }
+
         public DateTime GetDueDateTime()
         {
+            if (string.IsNullOrWhiteSpace(Time))
+                Time = "12:00";
             return DateTime.Parse($"{Date} {Time}");
         }
     }
