@@ -248,6 +248,10 @@
     <Compile Include="Persistance\Migrations\201709150934402_PopulateDBWithBloodBankExemple.Designer.cs">
       <DependentUpon>201709150934402_PopulateDBWithBloodBankExemple.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.cs" />
+    <Compile Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.Designer.cs">
+      <DependentUpon>201709261822242_BloodRequestImprovement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationDbContext.cs" />
@@ -339,6 +343,7 @@
     <Content Include="Views\Donor\Create.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Views\BloodRequest\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistance\Migrations\201709150934402_PopulateDBWithBloodBankExemple.resx">
       <DependentUpon>201709150934402_PopulateDBWithBloodBankExemple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.resx">
+      <DependentUpon>201709261822242_BloodRequestImprovement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
