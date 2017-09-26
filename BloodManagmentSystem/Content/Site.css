@@ -1,29 +1,63 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-family: 'Maven Pro', Sans-Serif;
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
-    white-space: normal;
+  white-space: normal;
 }
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+  max-width: 280px;
 }
-
 .highlight {
-    font-size: medium;
-    font-weight: bold;
+  font-size: medium;
+  font-weight: bold;
+}
+/* Bootstrap overrides */
+h1 {
+  font-family: 'Patua One', Cursive;
+}
+h2 {
+  font-family: 'Patua One', Cursive;
+}
+h3 {
+  font-family: 'Patua One', Cursive;
+}
+h4 {
+  font-family: 'Patua One', Cursive;
+}
+h5 {
+  font-family: 'Patua One', Cursive;
+}
+h6 {
+  font-family: 'Patua One', Cursive;
+}
+.h1 {
+  font-family: 'Patua One', Cursive;
+}
+.h2 {
+  font-family: 'Patua One', Cursive;
+}
+.h3 {
+  font-family: 'Patua One', Cursive;
+}
+.h4 {
+  font-family: 'Patua One', Cursive;
+}
+.h5 {
+  font-family: 'Patua One', Cursive;
+}
+.h6 {
+  font-family: 'Patua One', Cursive;
 }
