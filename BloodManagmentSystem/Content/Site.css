@@ -1,7 +1,8 @@
 ﻿body {
   padding-top: 50px;
   padding-bottom: 20px;
-  font-family: 'Maven Pro', Sans-Serif;
+  font-family: 'Titillium Web', Sans-Serif;
+  font-size: 16px;
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -24,40 +25,43 @@ textarea {
   font-size: medium;
   font-weight: bold;
 }
+span.field-validation-error {
+  color: red;
+  font-weight: bold;
+}
 /* Bootstrap overrides */
-h1 {
-  font-family: 'Patua One', Cursive;
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-h2 {
-  font-family: 'Patua One', Cursive;
-}
-h3 {
-  font-family: 'Patua One', Cursive;
-}
-h4 {
-  font-family: 'Patua One', Cursive;
-}
-h5 {
-  font-family: 'Patua One', Cursive;
-}
-h6 {
-  font-family: 'Patua One', Cursive;
-}
+h1,
 .h1 {
-  font-family: 'Patua One', Cursive;
+  font-family: 'Dosis', Sans-Serif;
+  font-size: 40px;
 }
+h2,
 .h2 {
-  font-family: 'Patua One', Cursive;
+  font-family: 'Dosis', Sans-Serif;
+  font-size: 36px;
 }
+h3,
 .h3 {
-  font-family: 'Patua One', Cursive;
+  font-family: 'Dosis', Sans-Serif;
+  font-size: 30px;
 }
+h4,
 .h4 {
-  font-family: 'Patua One', Cursive;
+  font-family: 'Dosis', Sans-Serif;
+  font-size: 24px;
 }
+h5,
 .h5 {
-  font-family: 'Patua One', Cursive;
+  font-family: 'Dosis', Sans-Serif;
+  font-size: 18px;
 }
+h6,
 .h6 {
-  font-family: 'Patua One', Cursive;
+  font-family: 'Dosis', Sans-Serif;
+  font-size: 14px;
 }
