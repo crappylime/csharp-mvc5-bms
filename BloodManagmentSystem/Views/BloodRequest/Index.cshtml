@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BloodManagmentSystem.Core.Models.BloodRequest>
+
+@{
+    ViewBag.Title = "Blood donation requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Blood donation requests</h2>
+
+@foreach (var request in Model)
+{
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <span class="highlight">
+                Request ID: @request.Id
+            </span>
+            <span class="pull-right">
+                <a href="@Url.Action("Details", "BloodRequest", new {id = request.Id})">
+                    Details
+                </a>
+            </span>
+        </div>
+        <div class="panel-body">
+            <p>This blood donation takes place in @request.Bank.Name</p>
+        </div>
+        <!-- List group -->
+        <ul class="list-group">
+            <li class="list-group-item">Donation expiration date: @request.DueDate</li>
+        </ul>
+    </div>
+}

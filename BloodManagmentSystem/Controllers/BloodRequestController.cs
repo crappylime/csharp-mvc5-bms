@@ -15,6 +15,13 @@ namespace BloodManagmentSystem.Controllers
         }
 
         [HttpGet]
+        public ActionResult Index()
+        {
+            var requests = _unitOfWork.Requests.GetAllInProgressRequests();
+            return View(requests);
+        }
+
+        [HttpGet]
         public ActionResult Create()
         {
             var model = new BloodRequestFormViewModel
@@ -30,7 +37,10 @@ namespace BloodManagmentSystem.Controllers
         public ActionResult Create(BloodRequestFormViewModel model)
         {
             if (!ModelState.IsValid)
+            {
+                model.Banks = _unitOfWork.Banks.GetBloodBanks();
                 return View("Create", model);
+            }
 
             var request = new BloodRequest
             {
@@ -42,8 +52,19 @@ namespace BloodManagmentSystem.Controllers
 
             _unitOfWork.Requests.Add(request);
             _unitOfWork.Complete();
-
-            return View("Details");
+            
+            return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            var requestDetails = new BloodRequestDetailsViewModel
+            {
+                Request = _unitOfWork.Requests.GetRequest(id)
+            };
+
+            return View(requestDetails);
+        }
+
     }
 }

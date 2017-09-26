@@ -229,10 +229,13 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IBloodBankRepository.cs" />
+    <Compile Include="Core\ViewModels\FutureValidDate.cs" />
     <Compile Include="Core\ViewModels\IsTimeValid.cs" />
+    <Compile Include="Core\ViewModels\BloodRequestDetailsViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
     <Compile Include="Persistance\Migrations\201708311209597_InitialMigration.cs" />
     <Compile Include="Persistance\Migrations\201708311209597_InitialMigration.Designer.cs">
       <DependentUpon>201708311209597_InitialMigration.cs</DependentUpon>
@@ -252,6 +255,10 @@
     <Compile Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.cs" />
     <Compile Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.Designer.cs">
       <DependentUpon>201709261822242_BloodRequestImprovement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Migrations\201709261947287_AddBankToBloodRequest.cs" />
+    <Compile Include="Persistance\Migrations\201709261947287_AddBankToBloodRequest.Designer.cs">
+      <DependentUpon>201709261947287_AddBankToBloodRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -345,6 +352,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\BloodRequest\Details.cshtml" />
+    <Content Include="Views\BloodRequest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.resx">
       <DependentUpon>201709261822242_BloodRequestImprovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201709261947287_AddBankToBloodRequest.resx">
+      <DependentUpon>201709261947287_AddBankToBloodRequest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

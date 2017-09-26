@@ -1,6 +1,8 @@
 ﻿using BloodManagmentSystem.Core.Models;
 using BloodManagmentSystem.Core.Repositories;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace BloodManagmentSystem.Persistance.Repositories
@@ -14,16 +16,22 @@ namespace BloodManagmentSystem.Persistance.Repositories
             _context = context;
         }
 
-        public IEnumerable<BloodRequest> GetBloodRequestsBy(int id)
-        {
-            return _context.Requests
-                .Where(r => r.Id == id)
-                .ToList();
-        }
-
         public void Add(BloodRequest request)
         {
             _context.Requests.Add(request);
+        }
+
+        public BloodRequest GetRequest(int requestId)
+        {
+            return _context.Requests.SingleOrDefault(r => r.Id == requestId);
+        }
+
+        public IEnumerable<BloodRequest> GetAllInProgressRequests()
+        {
+            return _context.Requests
+                .Where(r => r.DueDate > DateTime.Now)
+                .Include(r => r.Bank)
+                .ToList();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace BloodManagmentSystem.Core.ViewModels
         public BloodType BloodType { get; set; }
 
         [Required]
+        [FutureValidDate]
         public string Date { get; set; }
 
         [IsTimeValid]

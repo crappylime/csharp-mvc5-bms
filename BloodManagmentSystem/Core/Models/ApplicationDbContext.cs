@@ -1,5 +1,6 @@
-using System.Data.Entity;
+using BloodManagmentSystem.Persistance.EntityConfigurations;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace BloodManagmentSystem.Core.Models
 {
@@ -16,6 +17,13 @@ namespace BloodManagmentSystem.Core.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new BloodRequestConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
