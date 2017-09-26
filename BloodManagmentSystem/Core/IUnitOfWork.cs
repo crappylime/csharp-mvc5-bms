@@ -4,8 +4,8 @@ namespace BloodManagmentSystem.Core
 {
     public interface IUnitOfWork
     {
-        IBloodRequestRepository BloodRequests { get; }
-        IBloodBankRepository BloodBanks { get; }
+        IBloodRequestRepository Requests { get; }
+        IBloodBankRepository Banks { get; }
         void Complete();
     }
 }

@@ -6,14 +6,14 @@ namespace BloodManagmentSystem.Persistance.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO BloodBanks (Name, City) VALUES ('RCK Krakow', 'Cracow')");
-            Sql("INSERT INTO BloodBanks (Name, City) VALUES ('RCK Katowice', 'Katowice')");
-            Sql("INSERT INTO BloodBanks (Name, City) VALUES ('RCK Warszawa', 'Warsow')");
+            Sql("INSERT INTO Banks (Name, City) VALUES ('RCK Krakow', 'Cracow')");
+            Sql("INSERT INTO Banks (Name, City) VALUES ('RCK Katowice', 'Katowice')");
+            Sql("INSERT INTO Banks (Name, City) VALUES ('RCK Warszawa', 'Warsow')");
         }
         
         public override void Down()
         {
-            Sql("DELETE FROM BloodBanks WHERE Id IN (1, 2, 3)");
+            Sql("DELETE FROM Banks WHERE Id IN (1, 2, 3)");
         }
     }
 }

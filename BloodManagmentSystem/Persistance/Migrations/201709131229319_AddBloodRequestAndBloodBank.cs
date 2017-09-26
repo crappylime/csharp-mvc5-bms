@@ -7,7 +7,7 @@ namespace BloodManagmentSystem.Persistance.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.BloodBanks",
+                "dbo.Banks",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -17,7 +17,7 @@ namespace BloodManagmentSystem.Persistance.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.BloodRequests",
+                "dbo.Requests",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -27,17 +27,17 @@ namespace BloodManagmentSystem.Persistance.Migrations
                         Bank_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.BloodBanks", t => t.Bank_Id)
+                .ForeignKey("dbo.Banks", t => t.Bank_Id)
                 .Index(t => t.Bank_Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.BloodRequests", "Bank_Id", "dbo.BloodBanks");
-            DropIndex("dbo.BloodRequests", new[] { "Bank_Id" });
-            DropTable("dbo.BloodRequests");
-            DropTable("dbo.BloodBanks");
+            DropForeignKey("dbo.Requests", "Bank_Id", "dbo.Banks");
+            DropIndex("dbo.Requests", new[] { "Bank_Id" });
+            DropTable("dbo.Requests");
+            DropTable("dbo.Banks");
         }
     }
 }

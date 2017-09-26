@@ -5,7 +5,7 @@ namespace BloodManagmentSystem.Core.Models
 {
     public class BloodRequest
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
 
         [Required]
         public BloodType BloodType { get; set; }
@@ -17,7 +17,7 @@ namespace BloodManagmentSystem.Core.Models
         public string City { get; set; }
 
         [Required]
-        public BloodBank Bank { get; set; }
+        public int BankId { get; set; }
 
     }
 }

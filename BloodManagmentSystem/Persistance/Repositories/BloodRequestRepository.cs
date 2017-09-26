@@ -21,5 +21,9 @@ namespace BloodManagmentSystem.Persistance.Repositories
                 .ToList();
         }
 
+        public void Add(BloodRequest request)
+        {
+            _context.Requests.Add(request);
+        }
     }
 }
