@@ -235,32 +235,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709270850075_InitialMigration.cs" />
+    <Compile Include="Migrations\201709270850075_InitialMigration.Designer.cs">
+      <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
-    <Compile Include="Persistance\Migrations\201708311209597_InitialMigration.cs" />
-    <Compile Include="Persistance\Migrations\201708311209597_InitialMigration.Designer.cs">
-      <DependentUpon>201708311209597_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709131229319_AddBloodRequestAndBloodBank.cs" />
-    <Compile Include="Persistance\Migrations\201709131229319_AddBloodRequestAndBloodBank.Designer.cs">
-      <DependentUpon>201709131229319_AddBloodRequestAndBloodBank.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.cs" />
-    <Compile Include="Persistance\Migrations\201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.Designer.cs">
-      <DependentUpon>201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709150934402_PopulateDBWithBloodBankExemple.cs" />
-    <Compile Include="Persistance\Migrations\201709150934402_PopulateDBWithBloodBankExemple.Designer.cs">
-      <DependentUpon>201709150934402_PopulateDBWithBloodBankExemple.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.cs" />
-    <Compile Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.Designer.cs">
-      <DependentUpon>201709261822242_BloodRequestImprovement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709261947287_AddBankToBloodRequest.cs" />
-    <Compile Include="Persistance\Migrations\201709261947287_AddBankToBloodRequest.Designer.cs">
-      <DependentUpon>201709261947287_AddBankToBloodRequest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationDbContext.cs" />
     <Compile Include="Core\Models\BloodBank.cs" />
@@ -371,23 +352,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Persistance\Migrations\201708311209597_InitialMigration.resx">
-      <DependentUpon>201708311209597_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709131229319_AddBloodRequestAndBloodBank.resx">
-      <DependentUpon>201709131229319_AddBloodRequestAndBloodBank.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.resx">
-      <DependentUpon>201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709150934402_PopulateDBWithBloodBankExemple.resx">
-      <DependentUpon>201709150934402_PopulateDBWithBloodBankExemple.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709261822242_BloodRequestImprovement.resx">
-      <DependentUpon>201709261822242_BloodRequestImprovement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709261947287_AddBankToBloodRequest.resx">
-      <DependentUpon>201709261947287_AddBankToBloodRequest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709270850075_InitialMigration.resx">
+      <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

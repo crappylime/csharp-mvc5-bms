@@ -1,11 +1,36 @@
-using System.Data.Entity.Migrations;
-
-namespace BloodManagmentSystem.Persistance.Migrations
+namespace BloodManagmentSystem.Migrations
 {
+    using System;
+    using System.Data.Entity.Migrations;
+    
     public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.BloodBanks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        City = c.String(nullable: false, maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.BloodRequests",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        BloodType = c.Int(nullable: false),
+                        DueDate = c.DateTime(nullable: false),
+                        City = c.String(maxLength: 50),
+                        BankId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.BloodBanks", t => t.BankId, cascadeDelete: true)
+                .Index(t => t.BankId);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -82,17 +107,21 @@ namespace BloodManagmentSystem.Persistance.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.BloodRequests", "BankId", "dbo.BloodBanks");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.BloodRequests", new[] { "BankId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.BloodRequests");
+            DropTable("dbo.BloodBanks");
         }
     }
 }

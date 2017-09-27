@@ -22,6 +22,7 @@ namespace BloodManagmentSystem.Core.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new BloodRequestConfiguration());
+            modelBuilder.Configurations.Add(new BloodBankConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
