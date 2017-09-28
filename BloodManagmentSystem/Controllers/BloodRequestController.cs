@@ -45,7 +45,7 @@ namespace BloodManagmentSystem.Controllers
             var request = new BloodRequest
             {
                 BloodType = model.BloodType,
-                DueDate = model.GetDueDateTime(),
+                DueDateTime = model.GetDueDateTime(),
                 City = model.City,
                 BankId = model.Bank
             };

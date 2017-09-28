@@ -15,7 +15,7 @@ namespace BloodManagmentSystem.Core.ViewModels
 
         [Required]
         [FutureValidDate]
-        public DateTime Date { get; set; }
+        public DateTime DueDate { get; set; }
 
         [IsTimeValid]
         public DateTime Time { get; set; }
@@ -33,9 +33,7 @@ namespace BloodManagmentSystem.Core.ViewModels
 
         public DateTime GetDueDateTime()
         {
-            //if (string.IsNullOrWhiteSpace(Time))
-            //    Time = "12:00";
-            return DateTime.Parse($"{Date} {Time}", CultureInfo.CurrentCulture);
+            return DueDate.Date.Add(Time.TimeOfDay);
         }
     }
 }
