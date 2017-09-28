@@ -1,15 +1,13 @@
-namespace BloodManagmentSystem.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
 
+namespace BloodManagmentSystem.Persistance.Migrations
+{
     internal sealed class Configuration : DbMigrationsConfiguration<BloodManagmentSystem.Core.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"Persistance\Migrations";
         }
 
         protected override void Seed(BloodManagmentSystem.Core.Models.ApplicationDbContext context)

@@ -1,8 +1,7 @@
-namespace BloodManagmentSystem.Migrations
+using System.Data.Entity.Migrations;
+
+namespace BloodManagmentSystem.Persistance.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class AddMockupDonorModel1 : DbMigration
     {
         public override void Up()
