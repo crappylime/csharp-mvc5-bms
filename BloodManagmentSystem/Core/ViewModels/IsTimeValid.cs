@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 
 namespace BloodManagmentSystem.Core.ViewModels
 {
@@ -11,12 +10,22 @@ namespace BloodManagmentSystem.Core.ViewModels
             if (value == null)
                 return true;
 
-            var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "HH:mm",
-                CultureInfo.CurrentCulture,
-                DateTimeStyles.None,
-                out var dateTime);
-
+            //var isValid = DateTime.TryParseExact(Convert.ToString(value),
+            //    "HH:mm",
+            //    CultureInfo.CurrentCulture,
+            //    DateTimeStyles.None,
+            //    out var dateTime);
+            bool isValid = true;
+            try
+            {
+                var x = (DateTime) value;
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                Console.WriteLine(e);
+                throw;
+            }
             return isValid;
         }
     }

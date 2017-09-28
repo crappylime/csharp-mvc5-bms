@@ -29,9 +29,11 @@ namespace BloodManagmentSystem.Persistance.Repositories
         public IEnumerable<BloodRequest> GetAllInProgressRequests()
         {
             return _context.Requests
-                .Where(r => r.DueDate > DateTime.Now)
-                .Include(r => r.Bank)
-                .ToList();
+            .Where(r => r.DueDate > DateTime.Now )
+            .Include(r => r.Bank)
+            .ToList();
         }
+
     }
+
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace BloodManagmentSystem.Core.ViewModels
 {
@@ -14,10 +15,10 @@ namespace BloodManagmentSystem.Core.ViewModels
 
         [Required]
         [FutureValidDate]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [IsTimeValid]
-        public string Time { get; set; }
+        public DateTime Time { get; set; }
 
         [Required]
         public int Bank { get; set; }
@@ -32,9 +33,9 @@ namespace BloodManagmentSystem.Core.ViewModels
 
         public DateTime GetDueDateTime()
         {
-            if (string.IsNullOrWhiteSpace(Time))
-                Time = "12:00";
-            return DateTime.Parse($"{Date} {Time}");
+            //if (string.IsNullOrWhiteSpace(Time))
+            //    Time = "12:00";
+            return DateTime.Parse($"{Date} {Time}", CultureInfo.CurrentCulture);
         }
     }
 }
