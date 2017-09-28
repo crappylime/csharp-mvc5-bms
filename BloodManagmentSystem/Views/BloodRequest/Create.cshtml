@@ -20,7 +20,11 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Time)
+<<<<<<< HEAD
         @Html.TimeBoxFor(m => m.Time, new { @class = "form-control", placeholder = "hh:mm" })
+=======
+        @Html.TextBoxFor(m => m.Time.ToString("HH:mm"), new { @class = "form-control", placeholder = "hh:mm" })
+>>>>>>> be221fd2e13b2b01595d5065195692a937c03245
         @Html.ValidationMessageFor(m => m.Time)
     </div>
     <div class="form-group">
