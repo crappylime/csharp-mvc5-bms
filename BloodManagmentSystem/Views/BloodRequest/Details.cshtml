@@ -5,6 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Request Details</h2>
+<div class="page-header">
+    <h1>Request Details</h1>
+</div>
 
+<div class="jumbotron">
+    <h1>@Model.Donors.Count()</h1>
+    <p>Donors match @Model.Request.BloodType blood type</p>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Donors</div>
+
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <td>Name</td>
+                <td>Email</td>
+            </thead>
+            @foreach (var donor in @Model.Donors)
+            {
+                <tr>
+                    <td>@donor.Name</td>
+                    <td>@donor.Email</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
 

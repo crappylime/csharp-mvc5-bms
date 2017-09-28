@@ -237,23 +237,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709270850075_InitialMigration.cs" />
-    <Compile Include="Migrations\201709270850075_InitialMigration.Designer.cs">
+    <Compile Include="Persistance\Migrations\201709270850075_InitialMigration.cs" />
+    <Compile Include="Persistance\Migrations\201709270850075_InitialMigration.Designer.cs">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709271124400_AddMockupDonorModel.cs" />
-    <Compile Include="Migrations\201709271124400_AddMockupDonorModel.Designer.cs">
+    <Compile Include="Persistance\Migrations\201709271124400_AddMockupDonorModel.cs" />
+    <Compile Include="Persistance\Migrations\201709271124400_AddMockupDonorModel.Designer.cs">
       <DependentUpon>201709271124400_AddMockupDonorModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709271126550_AddMockupDonorModel1.cs" />
-    <Compile Include="Migrations\201709271126550_AddMockupDonorModel1.Designer.cs">
+    <Compile Include="Persistance\Migrations\201709271126550_AddMockupDonorModel1.cs" />
+    <Compile Include="Persistance\Migrations\201709271126550_AddMockupDonorModel1.Designer.cs">
       <DependentUpon>201709271126550_AddMockupDonorModel1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709271146561_AddBloodTypeToDonor.cs" />
-    <Compile Include="Migrations\201709271146561_AddBloodTypeToDonor.Designer.cs">
+    <Compile Include="Persistance\Migrations\201709271146561_AddBloodTypeToDonor.cs" />
+    <Compile Include="Persistance\Migrations\201709271146561_AddBloodTypeToDonor.Designer.cs">
       <DependentUpon>201709271146561_AddBloodTypeToDonor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -369,16 +369,16 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709270850075_InitialMigration.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201709270850075_InitialMigration.resx">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709271124400_AddMockupDonorModel.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201709271124400_AddMockupDonorModel.resx">
       <DependentUpon>201709271124400_AddMockupDonorModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709271126550_AddMockupDonorModel1.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201709271126550_AddMockupDonorModel1.resx">
       <DependentUpon>201709271126550_AddMockupDonorModel1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709271146561_AddBloodTypeToDonor.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201709271146561_AddBloodTypeToDonor.resx">
       <DependentUpon>201709271146561_AddBloodTypeToDonor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
