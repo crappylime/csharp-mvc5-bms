@@ -58,9 +58,11 @@ namespace BloodManagmentSystem.Controllers
 
         public ActionResult Details(int id)
         {
+            var request = _unitOfWork.Requests.GetRequest(id);
             var requestDetails = new BloodRequestDetailsViewModel
             {
-                Request = _unitOfWork.Requests.GetRequest(id)
+                Request = request,
+                Donors = _unitOfWork.Donors.GetDonorsByBloodType(request.BloodType)
             };
 
             return View(requestDetails);
