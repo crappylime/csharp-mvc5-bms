@@ -14,11 +14,11 @@ namespace BloodManagmentSystem.Core.ViewModels
         public BloodType BloodType { get; set; }
 
         [Required]
-        [FutureValidDate]
-        public DateTime DueDate { get; set; }
+        [FutureValidDate(ErrorMessage = "Date must be greater then now")]
+        public string DueDate { get; set; }
 
         [IsTimeValid]
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
 
         [Required]
         public int Bank { get; set; }
@@ -33,7 +33,7 @@ namespace BloodManagmentSystem.Core.ViewModels
 
         public DateTime GetDueDateTime()
         {
-            return DueDate.Date.Add(Time.TimeOfDay);
+            return DateTime.Parse($"{DueDate} {Time}");
         }
     }
 }

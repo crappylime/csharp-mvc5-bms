@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.DueDate)
-        @Html.TextBoxFor(m => m.DueDate, new { @class = "form-control", placeholder = "dd/mm/yyyy" })
+        @Html.TextBoxFor(m => m.DueDate, new { @class="form-control", placeholder="mm/dd/yyyy" })
         @Html.ValidationMessageFor(m => m.DueDate)
     </div>
     <div class="form-group">
@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Bank)
-        @Html.DropDownListFor(m => m.Bank, new SelectList(Model.Banks, "Id", "Name"), "", new { @class = "form-control"})
+        @Html.DropDownListFor(m => m.Bank, new SelectList(Model.Banks, "Id", "Name"), "", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Bank)
     </div>
     <div class="form-group">
