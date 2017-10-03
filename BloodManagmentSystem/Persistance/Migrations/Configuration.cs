@@ -1,4 +1,5 @@
 using System.Data.Entity.Migrations;
+using BloodManagmentSystem.Core.Models;
 
 namespace BloodManagmentSystem.Persistance.Migrations
 {
@@ -24,6 +25,12 @@ namespace BloodManagmentSystem.Persistance.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Banks.AddOrUpdate(
+                b => new { b.Name, b.City }, 
+                new BloodBank { Name = "RCKiK Kraków", City = "Kraków"},
+                new BloodBank { Name = "RCK Warszawa", City = "Warszawa"},
+                new BloodBank { Name = "RCK Katowice", City = "Katowice"}
+            );
         }
     }
 }
