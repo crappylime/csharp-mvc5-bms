@@ -34,7 +34,7 @@
         </table>
     </div>
     <div>
-        <a class="btn btn-success" href="@Html.Action("SendEmails", TempData["Donors"] = Model.Donors)">Send Email</a>
+        @Html.ActionLink("Send Email", "Notify", TempData["Donors"] = Model.Donors, new { @class = "btn btn-success" })
     </div>
 </div>
 

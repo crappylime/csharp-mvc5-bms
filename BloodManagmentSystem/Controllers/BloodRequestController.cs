@@ -71,18 +71,23 @@ namespace BloodManagmentSystem.Controllers
             return View(requestDetails);
         }
 
-        public async Task<ActionResult> SendEmails() 
+        public ActionResult Notify() 
         {
             if (!(TempData["Donors"] is IEnumerable<Donor> donors))
                 return HttpNotFound();
 
+            Task.Factory.StartNew(() => SendEmails(donors));
+
+            return RedirectToAction("Index");
+        }
+
+        private void SendEmails(IEnumerable<Donor> donors)
+        {
             foreach (var donor in donors)
             {
                 var email = new ConfirmationEmail("Confirmation", donor);
                 email.SendAsync();
             }
-
-            return RedirectToAction("Index");
         }
     }
 }
