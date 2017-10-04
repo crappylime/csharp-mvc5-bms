@@ -68,5 +68,9 @@ namespace BloodManagmentSystem.Controllers
             return View(requestDetails);
         }
 
+        public ActionResult SendEmails()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

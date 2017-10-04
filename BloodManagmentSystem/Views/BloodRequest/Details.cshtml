@@ -2,6 +2,8 @@
 @using BloodManagmentSystem.Core.Models
 @model BloodManagmentSystem.Core.ViewModels.BloodRequestDetailsViewModel
 
+<%@ Page Async="true" %>
+
 @{
     ViewBag.Title = "Request Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -21,8 +23,8 @@
         <!-- Table -->
         <table class="table">
             <thead>
-                <td>Name</td>
-                <td>Email</td>
+            <td>Name</td>
+            <td>Email</td>
             </thead>
             @foreach (var donor in @Model.Donors)
             {
@@ -32,6 +34,9 @@
                 </tr>
             }
         </table>
+    </div>
+    <div>
+        @Html.ActionLink("Send Email", "Index", "EmailService", new { id = Model.Request.Id }, new { @class = "btn btn-success" })
     </div>
 </div>
 
