@@ -1,5 +1,5 @@
-﻿@model BloodManagmentSystem.Models.DonorConfirmationEmail
-To: @Model.Donor.Email 
+﻿@model BloodManagmentSystem.Core.Models.Donor
+To: @Model.Email 
 From: bms.mailingsystem@gmail.com 
 Subject: BMS blood request confirmation
 
@@ -59,7 +59,7 @@ Subject: BMS blood request confirmation
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color: white;">
                                 <tr>
                                     <td>
-                                        <h3 align="center">Cześć @Model.Donor.Name !</h3>
+                                        <h3 align="center">Cześć @Model.Name !</h3>
                                     </td>
                                 </tr>
                                 <tr>
