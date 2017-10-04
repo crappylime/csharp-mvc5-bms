@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201709270850075_InitialMigration.Designer.cs">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710040913154_CreateDonor.cs" />
+    <Compile Include="Migrations\201710040913154_CreateDonor.Designer.cs">
+      <DependentUpon>201710040913154_CreateDonor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
@@ -359,6 +363,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709270850075_InitialMigration.resx">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710040913154_CreateDonor.resx">
+      <DependentUpon>201710040913154_CreateDonor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
