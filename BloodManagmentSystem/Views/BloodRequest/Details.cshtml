@@ -1,4 +1,6 @@
-﻿@model BloodManagmentSystem.Core.ViewModels.BloodRequestDetailsViewModel
+﻿@using System.Reflection
+@using BloodManagmentSystem.Core.Models
+@model BloodManagmentSystem.Core.ViewModels.BloodRequestDetailsViewModel
 
 @{
     ViewBag.Title = "Request Details";
@@ -11,7 +13,7 @@
 
 <div class="jumbotron">
     <h1>@Model.Donors.Count()</h1>
-    <p>Donors match @Model.Request.BloodType blood type</p>
+ <p>Donors match <span class="blood-type">@Model.Request.BloodType.GetDisplayName()</span> blood type</p>
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">Donors</div>
