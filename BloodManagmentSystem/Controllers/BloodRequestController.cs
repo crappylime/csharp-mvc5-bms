@@ -1,4 +1,7 @@
-﻿using BloodManagmentSystem.Core;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
+using BloodManagmentSystem.Core;
 using BloodManagmentSystem.Core.Models;
 using BloodManagmentSystem.Core.ViewModels;
 using System.Web.Mvc;
@@ -68,8 +71,17 @@ namespace BloodManagmentSystem.Controllers
             return View(requestDetails);
         }
 
-        public ActionResult SendEmails()
+        public async Task<ActionResult> SendEmails() 
         {
+            if (!(TempData["Donors"] is IEnumerable<Donor> donors))
+                return HttpNotFound();
+
+            foreach (var donor in donors)
+            {
+                var email = new ConfirmationEmail("Confirmation", donor);
+                email.SendAsync();
+            }
+
             return RedirectToAction("Index");
         }
     }

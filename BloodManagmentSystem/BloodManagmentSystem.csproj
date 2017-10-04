@@ -231,7 +231,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BloodRequestController.cs" />
     <Compile Include="Controllers\DonorController.cs" />
-    <Compile Include="Controllers\EmailServiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
