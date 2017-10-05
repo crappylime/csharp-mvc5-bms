@@ -21,5 +21,9 @@ namespace BloodManagmentSystem.Persistance.Repositories
                 .ToList();
         }
 
+        public void Add(Donor donor)
+        {
+            _context.Donors.Add(donor);
+        }
     }
 }
