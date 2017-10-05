@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201710040913154_CreateDonor.Designer.cs">
       <DependentUpon>201710040913154_CreateDonor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.cs" />
+    <Compile Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.Designer.cs">
+      <DependentUpon>201710050954204_ReducePermittedLengthOfTheDonorName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
@@ -366,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710040913154_CreateDonor.resx">
       <DependentUpon>201710040913154_CreateDonor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.resx">
+      <DependentUpon>201710050954204_ReducePermittedLengthOfTheDonorName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
