@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Net;
-using System.Threading.Tasks;
-using BloodManagmentSystem.Core;
+﻿using BloodManagmentSystem.Core;
 using BloodManagmentSystem.Core.Models;
 using BloodManagmentSystem.Core.ViewModels;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BloodManagmentSystem.Controllers
