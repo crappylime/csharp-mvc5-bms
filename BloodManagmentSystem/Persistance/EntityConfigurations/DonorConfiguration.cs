@@ -9,7 +9,7 @@ namespace BloodManagmentSystem.Persistance.EntityConfigurations
         {
             Property(d => d.Name)
                 .IsRequired()
-                .HasMaxLength(255);
+                .HasMaxLength(50);
 
             Property(d => d.Email)
                 .IsRequired()
