@@ -248,21 +248,9 @@
     <Compile Include="Persistance\Migrations\201709270850075_InitialMigration.Designer.cs">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persistance\Migrations\201709271124400_AddMockupDonorModel.cs" />
-    <Compile Include="Persistance\Migrations\201709271124400_AddMockupDonorModel.Designer.cs">
-      <DependentUpon>201709271124400_AddMockupDonorModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709271126550_AddMockupDonorModel1.cs" />
-    <Compile Include="Persistance\Migrations\201709271126550_AddMockupDonorModel1.Designer.cs">
-      <DependentUpon>201709271126550_AddMockupDonorModel1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201709271146561_AddBloodTypeToDonor.cs" />
-    <Compile Include="Persistance\Migrations\201709271146561_AddBloodTypeToDonor.Designer.cs">
-      <DependentUpon>201709271146561_AddBloodTypeToDonor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistance\Migrations\201710040847514_RenameDateColumn.cs" />
-    <Compile Include="Persistance\Migrations\201710040847514_RenameDateColumn.Designer.cs">
-      <DependentUpon>201710040847514_RenameDateColumn.cs</DependentUpon>
+    <Compile Include="Persistance\Migrations\201710052125042_Dupa.cs" />
+    <Compile Include="Persistance\Migrations\201710052125042_Dupa.Designer.cs">
+      <DependentUpon>201710052125042_Dupa.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
@@ -387,17 +375,8 @@
     <EmbeddedResource Include="Persistance\Migrations\201709270850075_InitialMigration.resx">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709271124400_AddMockupDonorModel.resx">
-      <DependentUpon>201709271124400_AddMockupDonorModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709271126550_AddMockupDonorModel1.resx">
-      <DependentUpon>201709271126550_AddMockupDonorModel1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201709271146561_AddBloodTypeToDonor.resx">
-      <DependentUpon>201709271146561_AddBloodTypeToDonor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persistance\Migrations\201710040847514_RenameDateColumn.resx">
-      <DependentUpon>201710040847514_RenameDateColumn.cs</DependentUpon>
+    <EmbeddedResource Include="Persistance\Migrations\201710052125042_Dupa.resx">
+      <DependentUpon>201710052125042_Dupa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
