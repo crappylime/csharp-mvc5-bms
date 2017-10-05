@@ -6,6 +6,7 @@ namespace BloodManagmentSystem.Core
     {
         IBloodRequestRepository Requests { get; }
         IBloodBankRepository Banks { get; }
+        IDonorRepository Donors { get; }
         void Complete();
     }
 }
