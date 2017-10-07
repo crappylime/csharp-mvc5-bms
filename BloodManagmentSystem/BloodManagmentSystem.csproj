@@ -238,6 +238,7 @@
     <Compile Include="Core\Models\ConfirmationEmail.cs" />
     <Compile Include="Core\Models\Donor.cs" />
     <Compile Include="Core\Repositories\IBloodBankRepository.cs" />
+    <Compile Include="Core\Repositories\IConfirmationRepository.cs" />
     <Compile Include="Core\ViewModels\DonorFormViewModel.cs" />
     <Compile Include="Core\ViewModels\FutureValidDate.cs" />
     <Compile Include="Core\ViewModels\IsTimeValid.cs" />
@@ -252,6 +253,10 @@
     <Compile Include="Persistance\Migrations\201710052133257_RenameBloodRequestColumnname.cs" />
     <Compile Include="Persistance\Migrations\201710052133257_RenameBloodRequestColumnname.Designer.cs">
       <DependentUpon>201710052133257_RenameBloodRequestColumnname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Migrations\201710071603597_AddConfirmationTable.cs" />
+    <Compile Include="Persistance\Migrations\201710071603597_AddConfirmationTable.Designer.cs">
+      <DependentUpon>201710071603597_AddConfirmationTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Persistance\Migrations\201710040913154_CreateDonor.cs" />
@@ -394,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistance\Migrations\201710052133257_RenameBloodRequestColumnname.resx">
       <DependentUpon>201710052133257_RenameBloodRequestColumnname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201710071603597_AddConfirmationTable.resx">
+      <DependentUpon>201710071603597_AddConfirmationTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
