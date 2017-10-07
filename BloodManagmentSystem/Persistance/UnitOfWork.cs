@@ -9,13 +9,15 @@ namespace BloodManagmentSystem.Persistance
     {
         private readonly ApplicationDbContext _context;
 
-        public IBloodRequestRepository Requests { get; private set; }
-        public IBloodBankRepository Banks { get; private set; }
-        public IDonorRepository Donors { get; private set; }
+        public IBloodRequestRepository Requests { get; }
+        public IBloodBankRepository Banks { get; }
+        public IDonorRepository Donors { get; }
+        public IConfirmationRepository Confirmations { get; }
 
-        public UnitOfWork(ApplicationDbContext context, IDonorRepository donors)
+        public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
+            Confirmations = new ConfirmationRepository(context);
             Requests = new BloodRequestRepository(context);
             Banks = new BloodBankRepository(context);
             Donors = new DonorRepository(context);
