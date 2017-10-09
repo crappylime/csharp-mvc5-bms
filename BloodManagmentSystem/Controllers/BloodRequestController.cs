@@ -73,29 +73,38 @@ namespace BloodManagmentSystem.Controllers
             return View(requestDetails);
         }
 
-        public ActionResult Notify() 
+        public ActionResult Notify(int id)
         {
-            if (!(TempData["Donors"] is IEnumerable<Donor> donors))
+            var request = _unitOfWork.Requests.GetRequest(id);
+            if (request == null)
                 return HttpNotFound();
 
-            var confirmations = CreateConfirmations(donors);
+            var donors = _unitOfWork.Donors.GetDonorsByBloodType(request.BloodType);
+
+            var confirmations = CreateConfirmations(donors, id);
 
             _unitOfWork.Confirmations.AddRange(confirmations);
             _unitOfWork.Complete();
 
-            Task.Factory.StartNew(() => SendEmails(donors));
+            Task.Factory.StartNew(() => SendEmails(confirmations));
 
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Confirm(string hash)
+        {
             return RedirectToAction("Index");
         }
 
         #region PrivateMethods
 
-        private IEnumerable<Confirmation> CreateConfirmations(IEnumerable<Donor> donors)
+        private IEnumerable<Confirmation> CreateConfirmations(IEnumerable<Donor> donors, int requestId)
         {
             return donors.Select(donor => new Confirmation
             {
-                DonorId = donor.Id,
-                RequestId = 1,
+                Donor = donor,
+                RequestId = requestId,
                 HashCode = GetMd5HashCode($"{donor.Id}dnr"),
                 Status = false
             }).ToList();
@@ -117,11 +126,11 @@ namespace BloodManagmentSystem.Controllers
             return sb.ToString();
         }
 
-        private void SendEmails(IEnumerable<Donor> donors)
+        private void SendEmails(IEnumerable<Confirmation> confirmations)
         {
-            foreach (var donor in donors)
+            foreach (var confirmation in confirmations)
             {
-                var email = new ConfirmationEmail("Confirmation", donor);
+                var email = new ConfirmationEmail("Confirmation", confirmation);
                 email.SendAsync();
             }
         }

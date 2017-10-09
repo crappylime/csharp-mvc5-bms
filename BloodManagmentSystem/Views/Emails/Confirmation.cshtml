@@ -1,5 +1,5 @@
 ﻿@model BloodManagmentSystem.Core.Models.ConfirmationEmail
-To: @Model.Donor.Email 
+To: @Model.Confirmation.Donor.Email 
 From: bms.mailingsystem@gmail.com 
 Subject: BMS blood request confirmation
 
@@ -59,7 +59,7 @@ Subject: BMS blood request confirmation
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color: white;">
                                 <tr>
                                     <td>
-                                        <h3 align="center">Cześć @Model.Donor.Name !</h3>
+                                        <h3 align="center">Cześć @Model.Confirmation.Donor.Name !</h3>
                                     </td>
                                 </tr>
                                 <tr>
@@ -72,7 +72,11 @@ Subject: BMS blood request confirmation
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div align="center" style="padding-top: 30px"> <a href="#" class="btn">Pomagam</a> <a href="#" class="btn">Nie tym razem</a> </div>
+                                        <div align="center" style="padding-top: 30px">
+                                            <form action="http://localhost:59839/BloodRequest/Confirm/@Model.Confirmation.HashCode" method="post">
+                                                <button type="submit" class="btn" value="Pomagam"></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>

@@ -258,6 +258,10 @@
     <Compile Include="Persistance\Migrations\201710071603597_AddConfirmationTable.Designer.cs">
       <DependentUpon>201710071603597_AddConfirmationTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\Migrations\201710090838386_SetHashCodeToRequired.cs" />
+    <Compile Include="Persistance\Migrations\201710090838386_SetHashCodeToRequired.Designer.cs">
+      <DependentUpon>201710090838386_SetHashCodeToRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Persistance\Migrations\201710040913154_CreateDonor.cs" />
     <Compile Include="Persistance\Migrations\201710040913154_CreateDonor.Designer.cs">
@@ -381,7 +385,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\EmailService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -401,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistance\Migrations\201710071603597_AddConfirmationTable.resx">
       <DependentUpon>201710071603597_AddConfirmationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201710090838386_SetHashCodeToRequired.resx">
+      <DependentUpon>201710090838386_SetHashCodeToRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
