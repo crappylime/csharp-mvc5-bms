@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
 
 namespace BloodManagmentSystem.Core.Models
 {
@@ -27,5 +29,17 @@ namespace BloodManagmentSystem.Core.Models
 
         [Display(Name = "0 Rh-")]
         O_Rh_minus = 8
+    }
+
+    public static class EnumExtensions
+    {
+        public static string GetDisplayName(this BloodType bloodType)
+        {
+            return bloodType.GetType()
+                            .GetMember(bloodType.ToString())
+                            .First()
+                            .GetCustomAttribute<DisplayAttribute>()
+                            .GetName();
+        }
     }
 }

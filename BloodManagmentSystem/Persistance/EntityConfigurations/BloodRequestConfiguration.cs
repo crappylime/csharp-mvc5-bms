@@ -10,7 +10,7 @@ namespace BloodManagmentSystem.Persistance.EntityConfigurations
             Property(br => br.BloodType)
                 .IsRequired();
 
-            Property(br => br.DueDate)
+            Property(br => br.DueDateTime)
                 .IsRequired();
 
             Property(br => br.City)

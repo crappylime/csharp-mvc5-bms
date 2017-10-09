@@ -126,6 +126,12 @@
     <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Postal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=45719375b8b4d528, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postal.Mvc5.1.2.0\lib\net45\Postal.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.4.1.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -228,8 +234,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Models\Confirmation.cs" />
+    <Compile Include="Core\Models\ConfirmationEmail.cs" />
     <Compile Include="Core\Models\Donor.cs" />
     <Compile Include="Core\Repositories\IBloodBankRepository.cs" />
+    <Compile Include="Core\Repositories\IConfirmationRepository.cs" />
     <Compile Include="Core\ViewModels\DonorFormViewModel.cs" />
     <Compile Include="Core\ViewModels\FutureValidDate.cs" />
     <Compile Include="Core\ViewModels\IsTimeValid.cs" />
@@ -237,19 +246,31 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709270850075_InitialMigration.cs" />
-    <Compile Include="Migrations\201709270850075_InitialMigration.Designer.cs">
+    <Compile Include="Persistance\Migrations\201709270850075_InitialMigration.cs" />
+    <Compile Include="Persistance\Migrations\201709270850075_InitialMigration.Designer.cs">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710040913154_CreateDonor.cs" />
-    <Compile Include="Migrations\201710040913154_CreateDonor.Designer.cs">
+    <Compile Include="Persistance\Migrations\201710052133257_RenameBloodRequestColumnname.cs" />
+    <Compile Include="Persistance\Migrations\201710052133257_RenameBloodRequestColumnname.Designer.cs">
+      <DependentUpon>201710052133257_RenameBloodRequestColumnname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Migrations\201710071603597_AddConfirmationTable.cs" />
+    <Compile Include="Persistance\Migrations\201710071603597_AddConfirmationTable.Designer.cs">
+      <DependentUpon>201710071603597_AddConfirmationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Migrations\201710090838386_SetHashCodeToRequired.cs" />
+    <Compile Include="Persistance\Migrations\201710090838386_SetHashCodeToRequired.Designer.cs">
+      <DependentUpon>201710090838386_SetHashCodeToRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Migrations\Configuration.cs" />
+    <Compile Include="Persistance\Migrations\201710040913154_CreateDonor.cs" />
+    <Compile Include="Persistance\Migrations\201710040913154_CreateDonor.Designer.cs">
       <DependentUpon>201710040913154_CreateDonor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.cs" />
-    <Compile Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.Designer.cs">
+    <Compile Include="Persistance\Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.cs" />
+    <Compile Include="Persistance\Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.Designer.cs">
       <DependentUpon>201710050954204_ReducePermittedLengthOfTheDonorName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -261,6 +282,7 @@
     <Compile Include="Core\Models\ManageViewModels.cs" />
     <Compile Include="Persistance\EntityConfigurations\DonorConfiguration.cs" />
     <Compile Include="Persistance\Repositories\BloodBankRepository.cs" />
+    <Compile Include="Persistance\Repositories\ConfirmationRepository.cs" />
     <Compile Include="Persistance\Repositories\DonorRepository.cs" />
     <Compile Include="Core\Repositories\IDonorRepository.cs" />
     <Compile Include="Persistance\UnitOfWork.cs" />
@@ -356,6 +378,9 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\BloodRequest\Details.cshtml" />
     <Content Include="Views\BloodRequest\Index.cshtml" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
+    <Content Include="Views\Emails\Web.config" />
+    <Content Include="Views\Emails\Confirmation.cshtml" />
     <Content Include="Views\Donor\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -365,14 +390,23 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709270850075_InitialMigration.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201709270850075_InitialMigration.resx">
       <DependentUpon>201709270850075_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040913154_CreateDonor.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201710040913154_CreateDonor.resx">
       <DependentUpon>201710040913154_CreateDonor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.resx">
+    <EmbeddedResource Include="Persistance\Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.resx">
       <DependentUpon>201710050954204_ReducePermittedLengthOfTheDonorName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201710052133257_RenameBloodRequestColumnname.resx">
+      <DependentUpon>201710052133257_RenameBloodRequestColumnname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201710071603597_AddConfirmationTable.resx">
+      <DependentUpon>201710071603597_AddConfirmationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistance\Migrations\201710090838386_SetHashCodeToRequired.resx">
+      <DependentUpon>201710090838386_SetHashCodeToRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
