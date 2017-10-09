@@ -94,6 +94,15 @@ namespace BloodManagmentSystem.Controllers
         [HttpPost]
         public ActionResult Confirm(string hash)
         {
+            var confirmation = _unitOfWork.Confirmations.GetByHash(hash);
+            if (confirmation == null)
+                return HttpNotFound();
+
+            confirmation.Status = true;
+
+            _unitOfWork.Confirmations.Update(confirmation);
+            _unitOfWork.Complete();
+
             return RedirectToAction("Index");
         }
 

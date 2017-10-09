@@ -73,8 +73,8 @@ Subject: BMS blood request confirmation
                                 <tr>
                                     <td>
                                         <div align="center" style="padding-top: 30px">
-                                            <form action="http://localhost:59839/BloodRequest/Confirm/@Model.Confirmation.HashCode" method="post">
-                                                <button type="submit" class="btn" value="Pomagam"></button>
+                                            <form action="http://localhost:59839/BloodRequest/Confirm?hash=@Model.Confirmation.HashCode" method="post">
+                                                <button type="submit" class="btn">Pomagam</button>
                                             </form>
                                         </div>
                                     </td>

@@ -28,5 +28,15 @@ namespace BloodManagmentSystem.Persistance.Repositories
                 .Include(c => c.Donor)
                 .ToList();
         }
+
+        public Confirmation GetByHash(string hash)
+        {
+            return _context.Confirmations.SingleOrDefault(c => c.HashCode.Equals(hash));
+        }
+
+        public void Update(Confirmation confirmation)
+        {
+            _context.Entry(confirmation).State = EntityState.Modified;
+        }
     }
 }

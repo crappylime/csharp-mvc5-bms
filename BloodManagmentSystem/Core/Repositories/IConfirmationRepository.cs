@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BloodManagmentSystem.Core.Models;
+﻿using BloodManagmentSystem.Core.Models;
+using System.Collections.Generic;
 
 namespace BloodManagmentSystem.Core.Repositories
 {
@@ -7,5 +7,7 @@ namespace BloodManagmentSystem.Core.Repositories
     {
         void AddRange(IEnumerable<Confirmation> confirmations);
         IEnumerable<Confirmation> GetConfirmationsWithDonorsToRequest(int requestId);
+        Confirmation GetByHash(string hash);
+        void Update(Confirmation confirmation);
     }
 }
