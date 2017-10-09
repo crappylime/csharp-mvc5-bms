@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.Designer.cs">
       <DependentUpon>201710050954204_ReducePermittedLengthOfTheDonorName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710091321584_AddNameAndCityToApplicationUser.cs" />
+    <Compile Include="Migrations\201710091321584_AddNameAndCityToApplicationUser.Designer.cs">
+      <DependentUpon>201710091321584_AddNameAndCityToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodBankConfiguration.cs" />
     <Compile Include="Persistance\EntityConfigurations\BloodRequestConfiguration.cs" />
@@ -373,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710050954204_ReducePermittedLengthOfTheDonorName.resx">
       <DependentUpon>201710050954204_ReducePermittedLengthOfTheDonorName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091321584_AddNameAndCityToApplicationUser.resx">
+      <DependentUpon>201710091321584_AddNameAndCityToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
