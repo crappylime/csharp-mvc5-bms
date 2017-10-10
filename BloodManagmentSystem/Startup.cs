@@ -31,11 +31,12 @@ namespace BloodManagmentSystem
 
                 var user = new ApplicationUser
                 {
-                    UserName = "crappylime@op.pl",
-                    Email = "crappylime@op.pl"
+                    UserName = "bms.mailingservice@gmail.com",
+                    Email = "bms.mailingservice@gmail.com",
+                    EmailConfirmed = true
                 };
 
-                string userPwd = "Vamp@admin0";
+                string userPwd = "123456@D";
 
                 var chkUser = userManager.Create(user, userPwd);
 
