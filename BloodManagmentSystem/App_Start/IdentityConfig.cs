@@ -27,26 +27,17 @@ namespace BloodManagmentSystem
                 new HttpBasicAuthenticator("api",
                     "key-c4aea3087bb485bb47c03bbd6a924c52");
             RestRequest request = new RestRequest();
-            request.AddParameter("domain", "sandbox1b1bedd8d5c049aeacb3c640260b5c67.mailgun.org", ParameterType.UrlSegment);
+            request.AddParameter("domain", "sandbox1b1bedd8d5c049aeacb3c640260b5c67.mailgun.org",
+                ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
-            request.AddParameter("from", "BMS administrator <postmaster@sandbox1b1bedd8d5c049aeacb3c640260b5c67.mailgun.org>");
+            request.AddParameter("from",
+                "BMS administrator <postmaster@sandbox1b1bedd8d5c049aeacb3c640260b5c67.mailgun.org>");
             request.AddParameter("to", message.Destination);
             request.AddParameter("subject", message.Subject);
             request.AddParameter("text", message.Body);
             request.AddParameter("html", message.Body);
-
-            //            var client = new SendGridClient("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");
-            //            var myMessage = new SendGridMessage();
-            //            myMessage.AddTo(message.Destination);
-            //            myMessage.From = new EmailAddress(
-            //                "crappylime@op.pl", "BMS manager");
-            //            myMessage.Subject = message.Subject;
-            //            myMessage.PlainTextContent = message.Body;
-            //            myMessage.HtmlContent = message.Body;
-
             request.Method = Method.POST;
             return client.Execute(request);
-            //            await client.SendEmailAsync(myMessage);
         }
     }
 
