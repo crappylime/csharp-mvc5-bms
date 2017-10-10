@@ -21,8 +21,7 @@ namespace BloodManagmentSystem
 
         private async Task ConfigSendGridAsync(IdentityMessage message)
         {
-            var apiKey = Environment.GetEnvironmentVariable("crappylime");
-            var client = new SendGridClient(apiKey);
+            var client = new SendGridClient("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");
             var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
             myMessage.From = new EmailAddress(
