@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using BloodManagmentSystem.Core.Models;
@@ -25,13 +26,13 @@ namespace BloodManagmentSystem
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =
                 new HttpBasicAuthenticator("api",
-                    "key-c4aea3087bb485bb47c03bbd6a924c52");
+                    ConfigurationManager.AppSettings["apiKey"]);
             RestRequest request = new RestRequest();
-            request.AddParameter("domain", "sandbox1b1bedd8d5c049aeacb3c640260b5c67.mailgun.org",
+            request.AddParameter("domain", ConfigurationManager.AppSettings["domainName"],
                 ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from",
-                "BMS administrator <postmaster@sandbox1b1bedd8d5c049aeacb3c640260b5c67.mailgun.org>");
+                "BMS administrator bms.mailingservice@gmail.com");
             request.AddParameter("to", message.Destination);
             request.AddParameter("subject", message.Subject);
             request.AddParameter("text", message.Body);
