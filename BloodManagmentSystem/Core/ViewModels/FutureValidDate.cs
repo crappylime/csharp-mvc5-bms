@@ -8,12 +8,18 @@ namespace BloodManagmentSystem.Core.ViewModels
     {
         public override bool IsValid(object value)
         {
-            var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "dd/MM/yyyy",
-                CultureInfo.CurrentCulture,
-                DateTimeStyles.None,
-                out var dateTime);
-            return (isValid && dateTime > DateTime.Now);
+            var isValid = true;
+            try
+            {
+                var dateTime = DateTime.Parse((string) value);
+                isValid = dateTime > DateTime.Now;
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                Console.WriteLine(e);
+            }
+            return isValid;
         }
     }
 }

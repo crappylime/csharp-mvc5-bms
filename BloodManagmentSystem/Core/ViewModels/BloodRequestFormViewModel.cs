@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace BloodManagmentSystem.Core.ViewModels
 {
@@ -13,8 +14,8 @@ namespace BloodManagmentSystem.Core.ViewModels
         public BloodType BloodType { get; set; }
 
         [Required]
-        [FutureValidDate]
-        public string Date { get; set; }
+        [FutureValidDate(ErrorMessage = "Date must be greater then now")]
+        public string DueDate { get; set; }
 
         [IsTimeValid]
         public string Time { get; set; }
@@ -32,9 +33,7 @@ namespace BloodManagmentSystem.Core.ViewModels
 
         public DateTime GetDueDateTime()
         {
-            if (string.IsNullOrWhiteSpace(Time))
-                Time = "12:00";
-            return DateTime.Parse($"{Date} {Time}");
+            return DateTime.Parse($"{DueDate} {Time}");
         }
     }
 }
