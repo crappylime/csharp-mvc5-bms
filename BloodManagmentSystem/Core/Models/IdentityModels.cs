@@ -15,5 +15,8 @@ namespace BloodManagmentSystem.Core.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string Name { get; set; }
+        public string City { get; set; }
     }
 }
